@@ -31,9 +31,24 @@ module.exports = {
        })
     },
     editTodoById: (req,res) => {
+        const {id} = req.params
+        const {value} = req.body
+        const todo = Todos.find(todo => todo.id == id)
 
+        todo.value = value;
+
+        res.json({
+            message: "berhasil mengubah"
+        })
     },
     deleteTodoById: (req,res) => {
+        const {id} = req.params
+        const todo = Todos.findIndex(todo => todo.id == id)
 
+        Todos.splice(todo,1)
+
+        res.json({
+            message: "berhasil menghapus"
+        })
     }
 }
