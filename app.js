@@ -4,6 +4,9 @@ const app = express()
 const rootRoutes = require("./routes")
 
 const PORT = process.env.PORT || 3030
+
+
+
 app.use(express.json())
 app.use(rootRoutes)
 
