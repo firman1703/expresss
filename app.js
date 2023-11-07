@@ -4,9 +4,9 @@ const app = express()
 const rootRoutes = require("./routes")
 
 const PORT = process.env.PORT || 3030
-
+app.use(express.json())
 app.use(rootRoutes)
 
-app.listen(PORT,() => {
+app.listen(PORT, () => {
     console.log("server running on port :" + PORT)
 })

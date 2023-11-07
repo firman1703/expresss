@@ -1,14 +1,14 @@
 const Todos = require("../models/Todos")
 
 module.exports = {
-    getAllTodo: (req,res) => {
+    getAllTodo: (req, res) => {
         res.json({
             message: "berhasil mendapatkan data todos",
             data: Todos
         })
     },
-    getTodoById: (req,res) => {
-        const {id} = req.params
+    getTodoById: (req, res) => {
+        const { id } = req.params
         const todo = Todos.find(todo => todo.id == id)
 
         res.json({
@@ -16,24 +16,24 @@ module.exports = {
             data: todo
         })
     },
-    addTodo: (req,res) => {
-       const data = req.body
+    addTodo: (req, res) => {
+        const data = req.body
 
-       const newTodo = {
-        id: Todos[Todos.length-1].id + 1,
-        value: data.value,
-       }
+        const newTodo = {
+            id: Todos[Todos.length - 1].id + 1,
+            value: data.value,
+        }
 
-       Todos.push(newTodo)
+        Todos.push(newTodo)
 
-       res.status(201).json({
-        message: "berhasil menambahkan data"
-       })
+        res.status(201).json({
+            message: "berhasil menambahkan data"
+        })
     },
-    editTodoById: (req,res) => {
+    editTodoById: (req, res) => {
 
     },
-    deleteTodoById: (req,res) => {
+    deleteTodoById: (req, res) => {
 
     }
 }
