@@ -30,14 +30,10 @@ module.exports = {
             message: "berhasil menambahkan data"
         })
     },
-<<<<<<< HEAD
     editTodoById: (req, res) => {
-=======
-    editTodoById: (req,res) => {
-        const {id} = req.params
-        const {value} = req.body
+        const { id } = req.params
+        const { value } = req.body
         const todo = Todos.find(todo => todo.id == id)
->>>>>>> 649b88af503f1b446ab3de82e28b8436befb60a6
 
         todo.value = value;
 
@@ -45,15 +41,9 @@ module.exports = {
             message: "berhasil mengubah"
         })
     },
-<<<<<<< HEAD
     deleteTodoById: (req, res) => {
-=======
-    deleteTodoById: (req,res) => {
-        const {id} = req.params
-        const todo = Todos.findIndex(todo => todo.id == id)
->>>>>>> 649b88af503f1b446ab3de82e28b8436befb60a6
 
-        Todos.splice(todo,1)
+        Todos.splice(todo, 1)
 
         res.json({
             message: "berhasil menghapus"
